@@ -1,4 +1,4 @@
-fn cartesian_product<T: Clone>(arrays: &[&[T]]) -> Vec<Vec<T>> {
+fn cartesian_product<T: Clone>(arrays: &[[T;2]]) -> Vec<Vec<T>> {
     let mut product: Vec<Vec<T>> = vec![vec![]];
 
     for array in arrays {
@@ -24,7 +24,7 @@ fn test_cartesian_product() {
     let b = [3, 4];
     let c = [5, 6];
 
-    let result = cartesian_product(&[&a, &b, &c]);
+    let result = cartesian_product(&[a, b, c]);
 
     assert_eq!(result, vec![
         vec![1, 3, 5],
